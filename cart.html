@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.logo-icon {
+  color: #b88e2f;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.navbar-nav .nav-link {
+  color: black ; 
+  font-weight: 400;
+}
+.nav-icons{
+  gap: 45px;
+}
+.navbar-nav .nav-link:hover {
+  color: #b88e2f ; 
+}
+.cart-table th {
+    background-color: #fef6ed;
+    color: #000;
+    font-weight: bold;
+}
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.banner{
+    height: 250px;
+    background-image: url(./pictures/Rectangle\ 1.png);
+}
+.banner-text{
+    padding-top: 50px;
+}
+.cart-item-title {
+    font-size: 16px;
+    color: #6c757d;
+}
+.cart-totals {
+    background-color: #fef6ed;
+    padding: 20px;
+    border-radius: 8px;
+}
+.cart-totals h5 {
+            font-weight: bold;
+}
+.btn-checkout {
+    background-color: #f9f1e7;
+    border: 1px solid #000;
+    font-weight: bold;
+    color: #000;
+    border-radius: 8px;
+}
+.cart-table {
+        border-top: none;
+        border-bottom: none; 
+    }
+
+    .cart-table thead th, 
+    .cart-table tbody tr:last-child td {
+        border-top: none; 
+        border-bottom: none; 
+    }
+.price-highlight {
+    color: #b88e2f;
+    font-weight: bold;
+}
+.warrant{
+    background-color: #f9f1e7;
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    font-size: 14px;
+    border-top: 1px solid #dad6d6;
+  }
+  .footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .footer p {
+    color: #6c757d;
+  }
+  .footer a {
+    text-decoration: none;
+    color: #000;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .newsletter input {
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    padding: 5px;
+  }
+  .newsletter button {
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    color: #6c757d;
+    text-align: center;
+  }
+  
+  @media (max-width: 991px) {
+      .nav-icons {
+          order: 1;
+      }
+      .banner-text {
+          text-align: center;
+      }
+      .cart-table th, .cart-table td {
+          font-size: 14px;
+      }
+      .cart-item img {
+          width: 60px;
+          height: 60px;
+      }
+      .cart-totals {
+          padding: 15px;
+      }
+      .warrant .col-lg-3 {
+          text-align: center;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .navbar-nav {
+          flex-direction: column;
+          align-items: center;
+      }
+      .cart-table th, .cart-table td {
+          font-size: 12px;
+      }
+      .cart-item-title {
+          font-size: 14px;
+      }
+      .cart-totals h5, .cart-totals span {
+          font-size: 14px;
+      }
+      .cart-totals {
+          width: 100%;
+      }
+  }
+  
+  @media (max-width: 576px) {
+      .banner {
+          height: 200px;
+      }
+      .banner-text h1 {
+          font-size: 24px;
+      }
+      .cart-table {
+          font-size: 12px;
+      }
+      .cart-totals {
+          text-align: center;
+          width: 100%;
+          padding: 10px;
+      }
+      .cart-totals h5, .cart-totals span {
+          font-size: 12px;
+      }
+      .footer {
+          text-align: center;
+      }
+      .footer .col-md-3 {
+          margin-bottom: 20px;
+      }
+      .cart-table tbody tr {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .cart-table tbody td {
+          text-align: center;
+      }
+  }
+</style>
+</head>
+<body>
+
+    <header class="container-fluid d-flex justify-content-center align-items-center py-2">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg align-items-center">
+    
+                <a class="navbar-brand logo" href="#">
+                    <img src="./pictures/Frame 168.png" alt="logo">
+                </a>
+    
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarContent">
+    
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                
+    
+                
+                <div class="d-flex align-items-center nav-icons ">
+                  <img src="./pictures/mdi_account-alert-outline.png">
+                  <img src="./pictures/akar-icons_search.png">
+                  <img src="./pictures/akar-icons_heart.png">
+                  <a href="cart.html">
+                    <img src="./pictures/ant-design_shopping-cart-outlined.png" alt="Shopping Cart">
+                </a>
+              </div>
+            </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="banner ">
+        <div class="banner-text">
+            <div class="d-flex justify-content-center align-items-center"><img src="./pictures/Meubel House_Logos-05.png"></div>
+            <h1 class="d-flex justify-content-center align-items-center">Cart</h1>
+            <div class="d-flex justify-content-center align-items-center gap-3" >
+                <p><h5 class="fw-blod pt-1">Home</h5> <img class="h-75 pt-1" src="./pictures/dashicons_arrow-down-alt2.png"> Cart</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            
+            <div class="col-lg-8 mb-4">
+                <table class="table cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-flex align-items-center" style="padding-top: 20px;">
+                                <img src="./pictures/Group 146.png" alt="Product Image" class="cart-item me-3 pt-3">
+                                <span class="cart-item-title">Asgaard sofa</span>
+                            </td>
+                            <td class="text-secondary" style="padding-top: 70px;">Rs. 250,000.00</td>
+                            <td class="text-secondary" style="padding-top: 70px;"><input type="number" value="1" class="form-control form-control-sm text-center" style="width: 60px;"></td>
+                            <td class="text-secondary" style="padding-top: 70px;">Rs. 250,000.00</td>
+                            <td class="text-secondary" style="padding-top: 70px;"><img src="./pictures/ant-design_delete-filled.png" style="color: #d4af37; cursor: pointer;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="cart-totals w-75 h-100 px-5">
+                    <h5 class="d-flex justify-content-center align-items-center pb-3">Cart Totals</h5>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="h6">Subtotal</span>
+                        <span class="text-muted">Rs. 250,000.00</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="h6">Total</span>
+                        <span class="price-highlight">Rs. 250,000.00</span>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center"><button class="btn btn-checkout w-100 mt-3">Check Out</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+      <div class="warrant py-4 px-5">
+        <div class="row text-center text-lg-start justify-content-center align-items-center g-4 ps-5">
+          <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+            <img src="./pictures/trophy 1 (1).png" class="img-fluid" alt="High Quality">
+            <div>
+              <h6 class="mb-0">High Quality</h6>
+              <p class="text-secondary mb-0">Crafted from top materials</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+            <img src="./pictures/guarantee (1).png" class="img-fluid" alt="Warranty Protection">
+            <div>
+              <h6 class="mb-0">Warranty Protection</h6>
+              <p class="text-secondary mb-0">Over 2 years</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+            <img src="./pictures/shipping.png" class="img-fluid h-75" alt="Free Shipping">
+            <div>
+              <h6 class="mb-0">Free Shipping</h6>
+              <p class="text-secondary mb-0">Order over $150</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+            <img src="./pictures/customer-support.png" class="img-fluid h-75" alt="24/7 Support">
+            <div>
+              <h6 class="mb-0">24 / 7 Support</h6>
+              <p class="text-secondary mb-0">Dedicated support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              
+              <div class="col-md-3 col-12 text-center text-md-start">
+                  <h5 class="text-dark">Funiro.</h5>
+                  <p class="pt-4">
+                      400 University Drive Suite 200 Coral Gables,<br>
+                      FL 33134 USA
+                  </p>
+              </div>
+  
+              
+              <div class="col-md-3 col-6">
+                  <h5 class="small text-secondary">Links</h5>
+                  <ul class="list-unstyled fw-semibold">
+                      <li class="pt-4"><a href="#">Home</a></li>
+                      <li class="pt-4"><a href="#">Shop</a></li>
+                      <li class="pt-4"><a href="#">About</a></li>
+                      <li class="pt-4"><a href="#">Contact</a></li>
+                  </ul>
+              </div>
+  
+              
+              <div class="col-md-3 col-6">
+                  <h5 class="small text-secondary">Help</h5>
+                  <ul class="list-unstyled fw-semibold">
+                      <li class="pt-4"><a href="#">Payment Options</a></li>
+                      <li class="pt-4"><a href="#">Returns</a></li>
+                      <li class="pt-4"><a href="#">Privacy Policies</a></li>
+                  </ul>
+              </div>
+  
+              
+              <div class="col-md-3 col-12 mt-3 mt-md-0 text-center text-md-start">
+                  <h5 class="small text-secondary">Newsletter</h5>
+                  <div class="newsletter d-flex flex-column flex-md-row align-items-center gap-2">
+                      <input type="email" class="form-control" placeholder="Enter Your Email Address" style="background-color: #f8f9fa; max-width: 199px;">
+                      <button type="submit" class="border-bottom-black">Subscribe</button>
+                  </div>
+              </div>
+          </div>
+  
+          
+          <div class="footer-bottom mt-4 text-center text-md-start">
+              <p>2023 Funiro. All rights reserved</p>
+          </div>
+      </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

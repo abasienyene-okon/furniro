@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.logo-icon {
+  color: #b88e2f;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.navbar-nav .nav-link {
+  color: black ; 
+  font-weight: 400;
+}
+.nav-icons{
+  gap: 45px;
+}
+.navbar-nav .nav-link:hover {
+  color: #b88e2f ; 
+}
+.banner{
+    height: 250px;
+    background-image: url(./pictures/Rectangle\ 1.png);
+}
+.banner-text{
+    padding-top: 50px;
+}
+    .product-card {
+      border: 1px solid #ddd;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      position: relative;
+    }
+    .product-card:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .discount-badge, .new-badge {
+      position: absolute;
+      top: 10px;
+      left: 190px;
+      background-color: #ff6f61;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+    .new-badge {
+      background-color: #2ecc71;
+    }
+    .product-image {
+      width: 100%;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .original-price {
+      text-decoration: line-through;
+      font-size: 14px;
+      color: #888;
+    }
+    .pagination {
+      justify-content: center;
+    }
+    .pagination .page-item .page-link {
+            background-color: #fef6ed;
+        }
+
+        .pagination .page-item .page-link:hover {
+            background-color: #b5852b;
+            color: #fff;
+        }
+    .overlay {
+  position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+}
+.product-card:hover .overlay {
+  opacity: 1;
+}
+.warrant{
+    background-color: #f9f1e7;
+    width: 100%;
+}
+.Add{
+  color: #b88e2f;
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    font-size: 14px;
+    border-top: 1px solid #dad6d6;
+    
+  }
+  .footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .footer p {
+    color: #6c757d;
+  }
+  .footer a {
+    text-decoration: none;
+    color: #000;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .newsletter input {
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    padding: 5px;
+  }
+  .newsletter button {
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    color: #6c757d;
+    text-align: center;
+  }
+  .Subscribe{
+  padding-top: 12px;
+}
+.Subscribe:hover{
+  background-color: #000;
+  color: #fff;
+}
+  @media (max-width: 991px) {
+      .nav-icons {
+          order: 1;
+      }
+  }
+  </style>
+</head>
+<body>
+  <header class="container-fluid d-flex justify-content-center align-items-center py-2">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg align-items-center">
+
+            <a class="navbar-brand logo" href="#">
+                <img src="./pictures/Frame 168.png" alt="logo">
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            
+
+           
+            <div class="d-flex align-items-center nav-icons ">
+              <img src="./pictures/mdi_account-alert-outline.png">
+              <img src="./pictures/akar-icons_search.png">
+              <img src="./pictures/akar-icons_heart.png">
+              <a href="cart.html">
+                <img src="./pictures/ant-design_shopping-cart-outlined.png" alt="Shopping Cart">
+            </a>
+          </div>
+        </div>
+        </nav>
+    </div>
+</header>
+
+<div class="banner ">
+  <div class="banner-text">
+      <div class="d-flex justify-content-center align-items-center"><img src="./pictures/Meubel House_Logos-05.png"></div>
+      <h1 class="d-flex justify-content-center align-items-center">Shop</h1>
+      <div class="d-flex justify-content-center align-items-center gap-3" >
+          <p><h5 class="fw-blod pt-1">Home</h5> <img class="h-75 pt-1" src="./pictures/dashicons_arrow-down-alt2.png"> Shop</p>
+      </div>
+  </div>
+</div>
+
+
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 py-3 px-5" style="background-color: #f9f1e7;">
+  
+  <div class="d-flex align-items-center gap-3">
+    <button class="btn btn-sm border-0 d-flex align-items-center gap-1">
+      <img src="./pictures/system-uicons_filtering.png"> Filter
+    </button>
+    <button class="btn btn-sm border-0">
+      <img src="./pictures/Vector.png">
+    </button>
+    <button class="btn btn-sm border-0">
+      <img src="./pictures/bi_view-list.png">
+    </button>
+    <div class="vr"></div>
+    <span>Showing 1–16 of 32 results</span>
+  </div>
+
+
+  <div class="d-flex align-items-center gap-2">
+    <span>Show</span>
+    <button class="btn btn-sm border-0 rounded text-secondary bg-light">16</button>
+    <span>Short by</span>
+    <select class="form-select form-select-sm border-0 w-auto text-secondary">
+      <option selected>Default</option>
+      <option>Price: Low to High</option>
+      <option>Price: High to Low</option>
+      <option>Newest</option>
+    </select>
+  </div>
+</div>
+
+  <div class="container py-5 pb-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+      <div class="col">
+        <div class="product-card">
+          <div class="text-end"><span class="discount-badge  rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-30%</span></div>
+            <img src="./pictures/Images.png" class="product-image" alt="Syltherine">
+          <div class="product-info text-start">
+            <h5>Syltherine</h5>
+            <p>Stylish cafe chair</p>
+            <div class="price">Rp 2.500.000 <span class="original-price">Rp 3.500.000</span></div>
+          </div>
+          <div class="overlay">
+            <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+            <div class="d-flex justify-content-between w-75">
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="product-card">
+          <img src="./pictures/Images (6).png" class="product-image" alt="Leviosa">
+          <div class="product-info text-start">
+            <h5>Leviosa</h5>
+            <p>Stylish cafe chair</p>
+            <div class="price">Rp 2.500.000</div>
+          </div>
+          <div class="overlay">
+            <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+            <div class="d-flex justify-content-between w-75">
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="product-card">
+          <span class="discount-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-50%</span>
+          <img src="./pictures/Images (1).png" class="product-image" alt="Lolito">
+          <div class="product-info text-start">
+            <h5>Lolito</h5>
+            <p>Luxury big sofa</p>
+            <div class="price">Rp 7.000.000 <span class="original-price">Rp 14.000.000</span></div>
+          </div>
+          <div class="overlay">
+            <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+            <div class="d-flex justify-content-between w-75">
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="product-card">
+          <span class="new-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">New</span>
+          <img src="./pictures/Images (2).png" class="product-image" alt="Respira">
+          <div class="product-info text-start">
+            <h5>Respira</h5>
+            <p>Outdoor bar table and stool</p>
+            <div class="price">Rp 500.000</div>
+          </div>
+          <div class="overlay">
+            <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+            <div class="d-flex justify-content-between w-75">
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+              <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container pb-4">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+        <div class="col">
+          <div class="product-card">
+            <span class="discount-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-30%</span>
+            <img src="./pictures/Images.png" class="product-image" alt="Syltherine">
+            <div class="product-info text-start">
+              <h5>Syltherine</h5>
+              <p>Stylish cafe chair</p>
+              <div class="price">Rp 2.500.000 <span class="original-price">Rp 3.500.000</span></div>
+            </div>
+            <div class="overlay">
+              <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+              <div class="d-flex justify-content-between w-75">
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product-card">
+            <img src="./pictures/Images (6).png" class="product-image" alt="Leviosa">
+            <div class="product-info text-start">
+              <h5>Leviosa</h5>
+              <p>Stylish cafe chair</p>
+              <div class="price">Rp 2.500.000</div>
+            </div>
+            <div class="overlay">
+              <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+              <div class="d-flex justify-content-between w-75">
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product-card">
+            <span class="discount-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-50%</span>
+            <img src="./pictures/Images (1).png" class="product-image" alt="Lolito">
+            <div class="product-info text-start">
+              <h5>Lolito</h5>
+              <p>Luxury big sofa</p>
+              <div class="price">Rp 7.000.000 <span class="original-price">Rp 14.000.000</span></div>
+            </div>
+            <div class="overlay">
+              <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+              <div class="d-flex justify-content-between w-75">
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="product-card">
+            <span class="new-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">New</span>
+            <img src="./pictures/Images (2).png" class="product-image" alt="Respira">
+            <div class="product-info text-start">
+              <h5>Respira</h5>
+              <p>Outdoor bar table and stool</p>
+              <div class="price">Rp 500.000</div>
+            </div>
+            <div class="overlay">
+              <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+              <div class="d-flex justify-content-between w-75">
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="container pb-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+          <div class="col">
+            <div class="product-card">
+              <span class="discount-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-30%</span>
+              <img src="./pictures/Images.png" class="product-image" alt="Syltherine">
+              <div class="product-info text-start">
+                <h5>Syltherine</h5>
+                <p>Stylish cafe chair</p>
+                <div class="price">Rp 2.500.000 <span class="original-price">Rp 3.500.000</span></div>
+              </div>
+              <div class="overlay">
+                <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                <div class="d-flex justify-content-between w-75">
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <img src="./pictures/Images (6).png" class="product-image" alt="Leviosa">
+              <div class="product-info text-start">
+                <h5>Leviosa</h5>
+                <p>Stylish cafe chair</p>
+                <div class="price">Rp 2.500.000</div>
+              </div>
+              <div class="overlay">
+                <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                <div class="d-flex justify-content-between w-75">
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <span class="discount-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-50%</span>
+              <img src="./pictures/Images (1).png" class="product-image" alt="Lolito">
+              <div class="product-info text-start">
+                <h5>Lolito</h5>
+                <p>Luxury big sofa</p>
+                <div class="price">Rp 7.000.000 <span class="original-price">Rp 14.000.000</span></div>
+              </div>
+              <div class="overlay">
+                <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                <div class="d-flex justify-content-between w-75">
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="product-card">
+              <span class="new-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">New</span>
+              <img src="./pictures/Images (2).png" class="product-image" alt="Respira">
+              <div class="product-info text-start">
+                <h5>Respira</h5>
+                <p>Outdoor bar table and stool</p>
+                <div class="price">Rp 500.000</div>
+              </div>
+              <div class="overlay">
+                <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                <div class="d-flex justify-content-between w-75">
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                  <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="container pb-5 pb-4">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+            <div class="col">
+              <div class="product-card">
+                <span class="discount-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-30%</span>
+                <img src="./pictures/Images.png" class="product-image" alt="Syltherine">
+                <div class="product-info text-start">
+                  <h5>Syltherine</h5>
+                  <p>Stylish cafe chair</p>
+                  <div class="price">Rp 2.500.000 <span class="original-price">Rp 3.500.000</span></div>
+                </div>
+                <div class="overlay">
+                  <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                  <div class="d-flex justify-content-between w-75">
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="product-card">
+                <img src="./pictures/Images (6).png" class="product-image" alt="Leviosa">
+                <div class="product-info text-start">
+                  <h5>Leviosa</h5>
+                  <p>Stylish cafe chair</p>
+                  <div class="price">Rp 2.500.000</div>
+                </div>
+                <div class="overlay">
+                  <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                  <div class="d-flex justify-content-between w-75">
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="product-card">
+                <span class="discount-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">-50%</span>
+                <img src="./pictures/Images (1).png" class="product-image" alt="Lolito">
+                <div class="product-info text-start">
+                  <h5>Lolito</h5>
+                  <p>Luxury big sofa</p>
+                  <div class="price">Rp 7.000.000 <span class="original-price">Rp 14.000.000</span></div>
+                </div>
+                <div class="overlay">
+                  <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                  <div class="d-flex justify-content-between w-75">
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="product-card">
+                <span class="new-badge rounded-circle pt-3 text-center " style="height:50px; width: 50px;">New</span>
+                <img src="./pictures/Images (2).png" class="product-image" alt="Respira">
+                <div class="product-info text-start">
+                  <h5>Respira</h5>
+                  <p>Outdoor bar table and stool</p>
+                  <div class="price">Rp 500.000</div>
+                </div>
+                <div class="overlay">
+                  <button class="Add btn btn-light rounded-0 mb-2">Add to Cart</button>
+                  <div class="d-flex justify-content-between w-75">
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/gridicons_share.png"> Share</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Group.png">Compare</a>
+                    <a href="#" class="text-light link-offset-2 link-offset-3-hover link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"><img src="./pictures/Vector (1).png" alt="">Like</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    <nav class="mt-4">
+      <ul class="pagination gap-3">
+        <li class="page-item"><a class="page-link rounded text-black" href="#">1</a></li>
+        <li class="page-item"><a class="page-link rounded text-black" href="#">2</a></li>
+        <li class="page-item"><a class="page-link rounded text-black" href="#">3</a></li>
+        <li class="page-item"><a class="page-link rounded text-black" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section>
+    <div class="warrant py-4 px-5">
+      <div class="row text-center text-lg-start justify-content-center align-items-center g-4 ps-5">
+        <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+          <img src="./pictures/trophy 1 (1).png" class="img-fluid" alt="High Quality">
+          <div>
+            <h6 class="mb-0">High Quality</h6>
+            <p class="text-secondary mb-0">Crafted from top materials</p>
+          </div>
+        </div>
+        
+        <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+          <img src="./pictures/guarantee (1).png" class="img-fluid" alt="Warranty Protection">
+          <div>
+            <h6 class="mb-0">Warranty Protection</h6>
+            <p class="text-secondary mb-0">Over 2 years</p>
+          </div>
+        </div>
+        
+        <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+          <img src="./pictures/shipping.png" class="img-fluid h-75" alt="Free Shipping">
+          <div>
+            <h6 class="mb-0">Free Shipping</h6>
+            <p class="text-secondary mb-0">Order over $150</p>
+          </div>
+        </div>
+        
+        <div class="col-12 col-sm-6 col-lg-3 d-flex gap-3 align-items-center">
+          <img src="./pictures/customer-support.png" class="img-fluid h-75" alt="24/7 Support">
+          <div>
+            <h6 class="mb-0">24 / 7 Support</h6>
+            <p class="text-secondary mb-0">Dedicated support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-3 col-12 text-center text-md-start">
+                <h5 class="text-dark">Funiro.</h5>
+                <p class="pt-4">
+                    400 University Drive Suite 200 Coral Gables,<br>
+                    FL 33134 USA
+                </p>
+            </div>
+
+            
+            <div class="col-md-3 col-6">
+                <h5 class="small text-secondary">Links</h5>
+                <ul class="list-unstyled fw-semibold">
+                    <li class="pt-4"><a href="#">Home</a></li>
+                    <li class="pt-4"><a href="#">Shop</a></li>
+                    <li class="pt-4"><a href="#">About</a></li>
+                    <li class="pt-4"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="col-md-3 col-6">
+                <h5 class="small text-secondary">Help</h5>
+                <ul class="list-unstyled fw-semibold">
+                    <li class="pt-4"><a href="#">Payment Options</a></li>
+                    <li class="pt-4"><a href="#">Returns</a></li>
+                    <li class="pt-4"><a href="#">Privacy Policies</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="col-md-3 col-12 mt-3 mt-md-0 text-center text-md-start">
+                <h5 class="small text-secondary">Newsletter</h5>
+                <div class="newsletter d-flex flex-column flex-md-row align-items-center gap-2">
+                    <input type="email" class="form-control" placeholder="Enter Your Email Address" style="background-color: #f8f9fa; max-width: 199px;">
+                    <button type="submit" class="Subscribe border-bottom-black">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="footer-bottom mt-4 text-center text-md-start">
+            <p>2023 Funiro. All rights reserved</p>
+        </div>
+    </div>
+</footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
